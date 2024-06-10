@@ -13,6 +13,7 @@ singlePlayerButton.addEventListener('click', () => {
   }
   document.body.classList.add('blur');
   singleScreen.classList.add('visible');
+  startGame('single-player');
 });
 
 exitSingleButton.addEventListener('click', () => {

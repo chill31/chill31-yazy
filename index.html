@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yazy game by chill31</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -42,19 +43,54 @@
 
     <div class="high-score-div">
       <p class="high-score-label">High Score</p>
-      <p class="high-score">0</p>
+      <p class="high-score">?</p>
     </div>
 
     <div class="game-container">
 
       <div class="main-game">
-        <div class="pattern-view"></div>
-        <div class="pattern-score-view"></div>
+        <div class="pattern-view">
+          <div class="pattern"><i class="bi bi-dice-1-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-2-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-3-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-4-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-5-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-6-fill"></i></div>
+          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
+          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
+          <div class="pattern"><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i></div>
+          <div class="pattern">Sequence <span class="sequence-flex">(<i class="bi bi-dice-1-fill"></i><i class="bi bi-dice-2-fill"></i><i class="bi bi-dice-3-fill"></i><i class="bi bi-dice-4-fill"></i><i class="bi bi-dice-5-fill"></i>)</span></div>
+        </div>
+        <div class="pattern-score-view">
+          <div class="pattern-score">0</div>
+          <div class="pattern-score taken">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score taken">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+        </div>
       </div>
 
-      <div class="dice-container"></div>
+      <div class="dice-container">
+        <div class="dice dice-1"></div>
+        <div class="dice dice-2"></div>
+        <div class="dice dice-3"></div>
+        <div class="dice dice-4"></div>
+        <div class="dice dice-5"></div>
+      </div>
 
-      <div class="score-container"></div>
+      <div class="roll-container">
+        <span class="roll-label">Roll</span>
+        <div class="roll-count-div">
+          <span class="roll roll-1 done">1</span>
+          <span class="roll roll-2">2</span>
+          <span class="roll roll-3">3</span>
+        </div>
+      </div>
 
     </div>
 
@@ -72,13 +108,48 @@
     <div class="game-container">
 
       <div class="main-game">
-        <div class="pattern-view"></div>
-        <div class="pattern-score-view"></div>
+        <div class="pattern-view">
+          <div class="pattern"><i class="bi bi-dice-1-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-2-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-3-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-4-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-5-fill"></i></div>
+          <div class="pattern"><i class="bi bi-dice-6-fill"></i></div>
+          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
+          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
+          <div class="pattern"><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i></div>
+          <div class="pattern">Sequence <span class="sequence-flex">(<i class="bi bi-dice-1-fill"></i><i class="bi bi-dice-2-fill"></i><i class="bi bi-dice-3-fill"></i><i class="bi bi-dice-4-fill"></i><i class="bi bi-dice-5-fill"></i>)</span></div>
+        </div>
+        <div class="pattern-score-view">
+          <div class="pattern-score">0</div>
+          <div class="pattern-score taken">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score taken">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+        </div>
       </div>
 
-      <div class="dice-container"></div>
+      <div class="dice-container">
+        <div class="dice dice-1"></div>
+        <div class="dice dice-2"></div>
+        <div class="dice dice-3"></div>
+        <div class="dice dice-4"></div>
+        <div class="dice dice-5"></div>
+      </div>
 
-      <div class="score-container"></div>
+      <div class="roll-container">
+        <span class="roll-label">Roll</span>
+        <div class="roll-count-div">
+          <span class="roll roll-1 done">1</span>
+          <span class="roll roll-2">2</span>
+          <span class="roll roll-3">3</span>
+        </div>
+      </div>
 
     </div>
 
@@ -87,8 +158,8 @@
     </span>
   </section>
 
-  <script src="body.js"></script>
   <script src="game.js"></script>
+  <script src="body.js"></script>
 </body>
 
 </html>

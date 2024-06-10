@@ -109,14 +109,16 @@ header {
 /** GAME DESIGN **/
 
 .screen {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  position: fixed;
+  position: absolute;
   transform: translateY(-100%);
   z-index: 1;
   background-color: var(--accent);
   transition: transform 400ms ease;
   transition-delay: 0ms;
+  padding-bottom: 2rem;
+  overflow-x: hidden;
 
   display: flex;
   flex-direction: column;
@@ -132,7 +134,7 @@ header {
 
 .exit-screen-button {
   position: absolute;
-  top: -.5rem;
+  top: -1rem;
   right: -.5rem;
   cursor: pointer;
   background-color: white;
@@ -145,6 +147,7 @@ header {
   justify-content: start;
   align-items: end;
   transition: transform 100ms ease-out;
+  overflow: auto;
 }
 
 .exit-screen-button:hover {
@@ -158,4 +161,180 @@ header {
 
 .screen-info {
   font-size: 1.3rem;
+}
+
+.high-score-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1ch;
+  font-size: 1.1rem;
+  background-color: white;
+  border-radius: .3rem;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: .8rem;
+  height: 50rem;
+  width: 40rem;
+  padding: 1rem;
+  max-width: calc(100vw - 2rem);
+  background-color: white;
+  border-radius: .5rem;
+}
+
+.main-game, .dice-container, .roll-container {
+  width: 100%;
+  padding: .4rem;
+  border-radius: .5rem;
+}
+
+.main-game {
+  height: 70%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: .4rem;
+  padding: .4rem;
+}
+
+.pattern-view {
+  width: 65%;
+  height: 100%;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: .2rem;
+}
+
+.pattern-view .pattern {
+  background-color: #d6d6d6;
+  width: 100%;
+  padding: .5rem;
+  min-height: 2.5rem;
+  border-radius: .25rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: .3rem;
+  font-size: 1.3rem;
+}
+
+.pattern i {
+  color: black;
+}
+
+.pattern .sequence-flex {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: .3rem;
+}
+
+.pattern-score-view {
+  width: 35%;
+  height: 100%;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: .2rem;
+}
+
+.pattern-score {
+  text-align: center;
+  background-color: var(--accent);
+  width: 100%;
+  padding: .5rem;
+  min-height: 2.5rem;
+  border-radius: .25rem;
+  font-size: 1.3rem;
+  box-shadow: 2px 4px 0px 0px rgba(41, 48, 50, 0.42);
+  cursor: pointer;
+  transition: background-color 100ms ease;
+}
+
+.pattern-score.taken {
+  background-color: #d6d6d6;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.dice-container {
+  height: 20%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: .5rem;
+}
+
+.dice {
+  aspect-ratio: 1;
+  width: 25%;
+  background-color: #d6d6d6;
+  border-radius: .5rem;
+}
+
+.roll-container {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  background-color: var(--accent);
+  cursor: pointer;
+  filter: contrast(1.1);
+  user-select: none;
+}
+
+.roll-label {
+  font-weight: 800;
+}
+
+.roll-count-div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: .5rem;
+}
+
+.roll {
+  padding-block: .4rem;
+  background-color: white;
+  border-radius: .3rem;
+  width: 2ch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 100ms ease;
+}
+
+.roll.done {
+  filter: brightness(.7);
+  opacity: .5;
+}
+
+.roll-container:hover .roll-count-div:not(:has(.roll.done)) .roll-1 {
+  transform: scale(1.1);
+}
+
+.roll-container:hover .roll-count-div .roll.done + .roll:not(.done) {
+  transform: scale(1.1);
+}
+
+.roll-container:has(.roll-3.done) {
+  pointer-events: none;
+  filter: brightness(.9);
+  opacity: .6;
 }
