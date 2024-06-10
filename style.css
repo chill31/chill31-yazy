@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+  --accent: #77d7ef;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--accent);
+  gap: 7rem;
+  min-height: 650px;
+  padding-bottom: 2rem;
+  overflow-x: hidden;
+}
+
+/** FOR BLUR ANIMATION */
+
+.page-header, .type-selector {
+  transition: filter 500ms ease;
+}
+
+body.blur .page-header, body.blur .type-selector {
+  filter: blur(2px);
+}
+
+header {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 3rem;
+  margin-bottom: .5rem;
+}
+
+.page-info {
+  font-size: 1.3rem;
+}
+
+.type-selector {
+  height: 20rem;
+  width: 50rem;
+  background-color: white;
+  border-radius: .6rem;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  max-width: calc(100vw - 4rem);
+}
+
+@media screen and (max-width: 600px) {
+  .type-selector {
+    flex-direction: column;
+    height: fit-content;
+    padding: 2rem 1rem;
+    max-width: calc(100vw - 2rem) !important;
+  }
+}
+
+.selector-button {
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  cursor: pointer;
+  background-color: var(--accent);
+  aspect-ratio: 1;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.7rem;
+  padding: 1rem;
+  transition: transform 100ms ease-out;
+}
+
+.selector-button:where(:hover, :focus) {
+  transform: scale(1.05);
+}
+
+.selector-image {
+  height: 4rem;
+  width: 3rem;
+}
+
+.selector-image path {
+  fill: #404040;
+}
+
+/** GAME DESIGN **/
+
+.screen {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  transform: translateY(-100%);
+  z-index: 1;
+  background-color: var(--accent);
+  transition: transform 400ms ease;
+  transition-delay: 0ms;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 3rem;
+}
+
+.screen.visible {
+  transform: unset;
+  transition-delay: 500ms;
+}
+
+.exit-screen-button {
+  position: absolute;
+  top: -.5rem;
+  right: -.5rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 0 50% 0;
+  height: 3.5rem;
+  aspect-ratio: 1;
+  padding: .5rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  transition: transform 100ms ease-out;
+}
+
+.exit-screen-button:hover {
+  transform: scale(1.05);
+}
+
+.screen-title {
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+
+.screen-info {
+  font-size: 1.3rem;
+}

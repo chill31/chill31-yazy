@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yazy game by chill31</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Yazy by Chill31</h1>
+    <p class="page-info">My version of Yazy with a few more patterns</p>
+  </header>
+
+  <div class="type-selector">
+
+    <button tabindex="0" class="selector-button single-player-selector">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="selector-image" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+      </svg>
+      Single player
+    </button>
+
+    <button tabindex="0" class="selector-button duo-selector">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="selector-image" viewBox="0 0 16 16">
+        <path
+          d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+      </svg>
+      With Duo
+    </button>
+
+  </div>
+
+  <section class="screen single-player-screen">
+    <header>
+      <h1 class="screen-title">Singleplayer</h1>
+      <p class="screen-info">Try to get a high score by making patterns</p>
+    </header>
+
+    <div class="high-score-div">
+      <p class="high-score-label">High Score</p>
+      <p class="high-score">0</p>
+    </div>
+
+    <div class="game-container">
+
+      <div class="main-game">
+        <div class="pattern-view"></div>
+        <div class="pattern-score-view"></div>
+      </div>
+
+      <div class="dice-container"></div>
+
+      <div class="score-container"></div>
+
+    </div>
+
+    <span class="exit-screen-button exit-single-player">
+      Exit
+    </span>
+  </section>
+
+  <section class="screen duo-screen">
+    <header>
+      <h1 class="screen-title">Multiplayer</h1>
+      <p class="screen-info">Play with anyone sitting with you chance by chance, and try to beat the other person with a better score</p>
+    </header>
+
+    <div class="game-container">
+
+      <div class="main-game">
+        <div class="pattern-view"></div>
+        <div class="pattern-score-view"></div>
+      </div>
+
+      <div class="dice-container"></div>
+
+      <div class="score-container"></div>
+
+    </div>
+
+    <span class="exit-screen-button exit-duo">
+      Exit
+    </span>
+  </section>
+
+  <script src="body.js"></script>
+  <script src="game.js"></script>
+</body>
+
+</html>
