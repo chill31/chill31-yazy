@@ -195,7 +195,7 @@ header {
 }
 
 .main-game {
-  height: 70%;
+  height: 65%;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -275,8 +275,20 @@ header {
   pointer-events: none;
 }
 
+.game-score-container {
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1ch;
+  font-size: 1.1rem;
+  background-color: var(--accent);
+  border-radius: .3rem;
+}
+
 .dice-container {
-  height: 20%;
+  height: 15%;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -288,6 +300,42 @@ header {
   width: 25%;
   background-color: #d6d6d6;
   border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: solid 6px transparent;
+}
+
+.dice.selected {
+  border-color: var(--accent);
+}
+
+.rolled-dice {
+  font-size: 4rem;
+}
+
+@media (max-width: 600px) {
+
+  .dice {
+    border-width: 4px
+  }
+
+  .rolled-dice {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .dice {
+    border-width: 3px
+  }
+
+  .rolled-dice {
+    font-size: 1.5rem;
+  }
+
 }
 
 .roll-container {
@@ -324,7 +372,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 100ms ease;
+  transition: 200ms ease-in-out;
+  transition-property: filter, opacity;
 }
 
 .roll.done {
@@ -336,16 +385,42 @@ header {
   box-shadow: none;
 }
 
-.roll-container:hover .roll-count-div:not(:has(.roll.done)) .roll-1 {
-  transform: scale(1.1);
-}
-
-.roll-container:hover .roll-count-div .roll.done + .roll:not(.done) {
-  transform: scale(1.1);
-}
-
-.roll-container:has(.roll-3.done) {
+/* it's actually roll-3, but for easiness in javascript, I have started iterations in html from 0 */
+.roll-container:has(.roll-2.done) {
   pointer-events: none;
   filter: brightness(.9);
   opacity: .6;
+}
+
+.roll-container.game-over {
+  pointer-events: none;
+  filter: brightness(.8);
+  opacity: .7;
+}
+
+.play-again {
+  width: 40rem;
+  max-width: calc(100vw - 2rem);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  background-color: white;
+  cursor: pointer;
+  filter: contrast(1.1);
+  user-select: none;
+  box-shadow: 3px 6px 0px 0px rgba(41, 48, 50, 0.42);
+  transition: box-shadow 200ms ease-out;
+}
+
+.play-again.hidden {
+  display: none;
+}
+
+.play-again:where(:hover, :focus) {
+  box-shadow: none;
 }
