@@ -1,3 +1,5 @@
+/* ONLY THE DEFAULT CODE WHICH WORKS FOR BOTH SCREENS IS PRESENT HERE. NO ACTUAL FUNCTIONS OF THE GAME ARE PRESENT HERE  */
+
 const singlePlayerButton = document.querySelector('.single-player-selector');
 const duoButton = document.querySelector('.duo-selector');
 

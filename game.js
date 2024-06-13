@@ -72,7 +72,6 @@ function startGame(type) {
 
         scoreSpan.textContent = gameScore;
 
-        // resetting the roll
         rollAmt = 0;
         rollCountSpans.forEach((span) => span.classList.remove('done'));
         selectedDices = [];
@@ -223,7 +222,6 @@ function checkForThrees(array, patternEl) {
   array.forEach(num => {
     count[num] = (count[num] || 0) + 1;
   });
-  // return the count
   let hasThreeOfSame = Object.values(count).some(val => val === 3);
   if (hasThreeOfSame) {
     let sum = array.reduce((acc, num) => acc + num, 0);
