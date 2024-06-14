@@ -250,7 +250,6 @@ function startGame(type) {
         selectedDices = [];
         selectedDicesValues = [];
         firstPlayerChance = false;
-        duoPlayerScreen.classList.add("second-player-chance")
         firstPlayerPatternScoreSpans.forEach((span) => span.classList.add('disable'));
         secondPlayerPatternScoreSpans.forEach((span) => span.classList.remove('disable'));
         dices.forEach((dice) => {
@@ -278,7 +277,6 @@ function startGame(type) {
         selectedDices2 = [];
         selectedDicesValues2 = [];
         firstPlayerChance = true;
-        duoPlayerScreen.classList.remove("second-player-chance")
         secondPlayerPatternScoreSpans.forEach((span) => span.classList.add('disable'));
         firstPlayerPatternScoreSpans.forEach((span) => span.classList.remove('disable'));
         dices.forEach((dice) => {
