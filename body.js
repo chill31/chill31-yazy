@@ -29,6 +29,7 @@ duoButton.addEventListener('click', () => {
   }
   document.body.classList.add('blur');
   duoScreen.classList.add('visible');
+  startGame('duo');
 });
 
 exitDuoButton.addEventListener('click', () => {

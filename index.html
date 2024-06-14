@@ -56,10 +56,15 @@
           <div class="pattern"><i class="bi bi-dice-4-fill"></i></div>
           <div class="pattern"><i class="bi bi-dice-5-fill"></i></div>
           <div class="pattern"><i class="bi bi-dice-6-fill"></i></div>
-          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
-          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
-          <div class="pattern"><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i></div>
-          <div class="pattern">Sequence <span class="sequence-flex">(<i class="bi bi-dice-1-fill"></i><i class="bi bi-dice-2-fill"></i><i class="bi bi-dice-3-fill"></i><i class="bi bi-dice-4-fill"></i><i class="bi bi-dice-5-fill"></i>)</span></div>
+          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i
+              class="bi bi-square-fill"></i></div>
+          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i
+              class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
+          <div class="pattern"><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i
+              class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i></div>
+          <div class="pattern">Sequence <span class="sequence-flex">(<i class="bi bi-dice-1-fill"></i><i
+                class="bi bi-dice-2-fill"></i><i class="bi bi-dice-3-fill"></i><i class="bi bi-dice-4-fill"></i><i
+                class="bi bi-dice-5-fill"></i>)</span></div>
         </div>
         <div class="pattern-score-view">
           <div class="pattern-score">0</div>
@@ -109,7 +114,8 @@
   <section class="screen duo-screen">
     <header>
       <h1 class="screen-title">Multiplayer</h1>
-      <p class="screen-info">Play with anyone sitting with you chance by chance, and try to beat the other person with a better score</p>
+      <p class="screen-info">Play with anyone sitting with you chance by chance, and try to beat the other person with a
+        better score</p>
     </header>
 
     <div class="game-container">
@@ -122,35 +128,51 @@
           <div class="pattern"><i class="bi bi-dice-4-fill"></i></div>
           <div class="pattern"><i class="bi bi-dice-5-fill"></i></div>
           <div class="pattern"><i class="bi bi-dice-6-fill"></i></div>
-          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
-          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
-          <div class="pattern"><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i></div>
-          <div class="pattern">Sequence <span class="sequence-flex">(<i class="bi bi-dice-1-fill"></i><i class="bi bi-dice-2-fill"></i><i class="bi bi-dice-3-fill"></i><i class="bi bi-dice-4-fill"></i><i class="bi bi-dice-5-fill"></i>)</span></div>
+          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i
+              class="bi bi-square-fill"></i></div>
+          <div class="pattern"><i class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i><i
+              class="bi bi-square-fill"></i><i class="bi bi-square-fill"></i></div>
+          <div class="pattern"><i class="bi-square-fill"></i><i class="bi-square-fill"></i><i
+              class="bi-square-fill"></i><i class="bi-square-fill"></i><i class="bi-square-fill"></i></div>
+          <div class="pattern">Sequence <span class="sequence-flex">(<i class="bi bi-dice-1-fill"></i><i
+                class="bi bi-dice-2-fill"></i><i class="bi bi-dice-3-fill"></i><i class="bi bi-dice-4-fill"></i><i
+                class="bi bi-dice-5-fill"></i>)</span></div>
         </div>
-        <div class="pattern-score-view">
-          <div class="pattern-score">0</div>
-          <div class="pattern-score taken">0</div>
+        <div class="pattern-score-view first-player">
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
-          <div class="pattern-score taken">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
         </div>
-        <div class="pattern-score-view">
+        <div class="pattern-score-view second-player">
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
-          <div class="pattern-score taken">0</div>
           <div class="pattern-score">0</div>
           <div class="pattern-score">0</div>
-          <div class="pattern-score taken">0</div>
+          <div class="pattern-score">0</div>
+          <div class="pattern-score">0</div>
         </div>
+      </div>
+
+      <div class="game-score-container">
+        <span class="score-flex">
+          <span class="score-label">Blue Score:</span>
+          <span class="score-span blue-score-span">0</span>
+        </span>
+        <span class="score-flex">
+          <span class="score-label">Red Score:</span>
+          <span class="score-span red-score-span">0</span>
+        </span>
       </div>
 
       <div class="dice-container">
@@ -164,9 +186,9 @@
       <div class="roll-container">
         <span class="roll-label">Roll</span>
         <div class="roll-count-div">
-          <span class="roll roll-1 done">1</span>
-          <span class="roll roll-2">2</span>
-          <span class="roll roll-3">3</span>
+          <span class="roll roll-0">1</span>
+          <span class="roll roll-1">2</span>
+          <span class="roll roll-2">3</span>
         </div>
       </div>
 

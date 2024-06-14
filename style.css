@@ -275,6 +275,11 @@ header {
   pointer-events: none;
 }
 
+.pattern-score.disable {
+  pointer-events: none;
+  filter: grayscale(.5);
+}
+
 .game-score-container {
   height: 5%;
   display: flex;
@@ -285,6 +290,10 @@ header {
   font-size: 1.1rem;
   background-color: var(--accent);
   border-radius: .3rem;
+}
+
+.duo-screen .game-score-container {
+  background-color: #d8d8d8;
 }
 
 .dice-container {
