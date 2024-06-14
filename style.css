@@ -132,10 +132,6 @@ header {
   transition-delay: 500ms;
 }
 
-.duo-screen.second-player-chance {
-  background-color: #FF877C;
-}
-
 .exit-screen-button {
   position: absolute;
   top: -1rem;
