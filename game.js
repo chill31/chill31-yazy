@@ -187,8 +187,6 @@ function startGame(type) {
           selectedDicesValues
         });
 
-        console.log(numbers)
-
         checkForPatterns(numbers, duoPlayerScreen.querySelector('.pattern-score-view.first-player'));
       } else {
         const numbers = rollDice({
@@ -197,8 +195,6 @@ function startGame(type) {
           selectedDices: selectedDices2,
           selectedDicesValues: selectedDicesValues2
         });
-
-        console.log(numbers)
 
         checkForPatterns(numbers, duoPlayerScreen.querySelector('.pattern-score-view.second-player'));
       }
@@ -296,11 +292,70 @@ function startGame(type) {
             gameOver = false;
           }
 
-          if(gameOver) {
-            
+          if (gameOver) {
+            const winner = gameScore > gameScore2 ? 'blue' : 'red';
+            const gameOverOverlay = duoPlayerScreen.querySelector('.game-over-overlay');
+            const bluePlayerOverlayScore = gameOverOverlay.querySelector('.overlay-blue-score');
+            const redPlayerOverlayScore = gameOverOverlay.querySelector('.overlay-red-score');
+            gameOverOverlay.classList.add('show');
+            gameOverOverlay.classList.add(`winner-${winner}`);
+            bluePlayerOverlayScore.textContent = gameScore;
+            redPlayerOverlayScore.textContent = gameScore2;
+
+            const playAgainButton = duoPlayerScreen.querySelector('.overlay-button');
+            playAgainButton.addEventListener('click', () => {
+              gameOverOverlay.classList.remove('show');
+              gameScore = 0;
+              gameScore2 = 0;
+              firstPlayerScoreSpan.textContent = 0;
+              secondPlayerScoreSpan.textContent = 0;
+              rollAmt = 0;
+              firstPlayerPatternScoreSpans.forEach((span) => {
+                span.classList.remove('taken');
+                span.textContent = 0;
+              });
+              secondPlayerPatternScoreSpans.forEach((span) => {
+                span.classList.remove('taken');
+                span.textContent = 0;
+              });
+
+              dices.forEach((dice) => {
+                dice.removeAttribute('data-value');
+                dice.classList.remove('selected');
+                dice.innerHTML = "";
+                rollCountSpans.forEach((span) => span.classList.remove('done'));
+              });
+              rollButton.classList.remove('game-over');
+            });
           }
         });
       });
+    });
+
+    const exitButton = duoPlayerScreen.querySelector('.exit-screen-button');
+    exitButton.addEventListener('click', () => {
+      duoPlayerScreen.classList.add('hidden');
+      gameScore = 0;
+      gameScore2 = 0;
+      firstPlayerScoreSpan.textContent = 0;
+      secondPlayerScoreSpan.textContent = 0;
+      rollAmt = 0;
+      firstPlayerPatternScoreSpans.forEach((span) => {
+        span.classList.remove('taken');
+        span.textContent = 0;
+      });
+      secondPlayerPatternScoreSpans.forEach((span) => {
+        span.classList.remove('taken');
+        span.textContent = 0;
+      });
+
+      dices.forEach((dice) => {
+        dice.removeAttribute('data-value');
+        dice.classList.remove('selected');
+        dice.innerHTML = "";
+        rollCountSpans.forEach((span) => span.classList.remove('done'));
+      });
+      rollButton.classList.remove('game-over');
     });
 
   }
