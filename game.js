@@ -380,46 +380,52 @@ function rollDice({ amount = 5, el = null, selectedDices = [], selectedDicesValu
 
 function checkForPatterns(numbers, patternEl) {
   const patternScoreSpans = patternEl.querySelectorAll('.pattern-score');
-  if (numbers.includes(1)) {
+  if (numbers.includes(1) && !patternScoreSpans[0].classList.contains("taken")) {
     const ones = numbers.filter((n) => n === 1);
     patternScoreSpans[0].textContent = ones.length;
   } else {
     patternScoreSpans[0].textContent = 0;
   }
-  if (numbers.includes(2)) {
+  if (numbers.includes(2) && !patternScoreSpans[1].classList.contains("taken")) {
     const twos = numbers.filter((n) => n === 2);
     patternScoreSpans[1].textContent = twos.length * 2;
   } else {
     patternScoreSpans[1].textContent = 0;
   }
-  if (numbers.includes(3)) {
+  if (numbers.includes(3) && !patternScoreSpans[2].classList.contains("taken")) {
     const threes = numbers.filter((n) => n === 3);
     patternScoreSpans[2].textContent = threes.length * 3;
   } else {
     patternScoreSpans[2].textContent = 0;
   }
-  if (numbers.includes(4)) {
+  if (numbers.includes(4) && !patternScoreSpans[3].classList.contains("taken")) {
     const fours = numbers.filter((n) => n === 4);
     patternScoreSpans[3].textContent = fours.length * 4;
   } else {
     patternScoreSpans[3].textContent = 0;
   }
-  if (numbers.includes(5)) {
+  if (numbers.includes(5) && !patternScoreSpans[4].classList.contains("taken")) {
     const fives = numbers.filter((n) => n === 5);
     patternScoreSpans[4].textContent = fives.length * 5;
   } else {
     patternScoreSpans[4].textContent = 0;
   }
-  if (numbers.includes(6)) {
+  if (numbers.includes(6) && !patternScoreSpans[5].classList.contains("taken")) {
     const sixes = numbers.filter((n) => n === 6);
     patternScoreSpans[5].textContent = sixes.length * 6;
   } else {
     patternScoreSpans[5].textContent = 0;
   }
 
-  checkForThrees(numbers, patternScoreSpans[6]);
-  checkForFours(numbers, patternScoreSpans[7]);
+  if (!patternScoreSpans[6].classList.contains("taken")) {
+    checkForThrees(numbers, patternScoreSpans[6]);
+  }
 
+  if (!patternScoreSpans[7].classList.contains("taken")) {
+    checkForFours(numbers, patternScoreSpans[7]);
+  }
+
+  if(patternScoreSpans[8].classList.contains("taken")) return;
   const allSame = numbers.every((num, index, arr) => num === arr[0]);
   if (allSame) {
     patternScoreSpans[8].textContent = 50;
